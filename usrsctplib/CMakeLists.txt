@@ -87,6 +87,10 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin" OR CMAKE_SYSTEM_NAME MATCHES "iOS")
 	add_definitions(-D__APPLE_USE_RFC_2292)
 endif ()
 
+if (CMAKE_SYSTEM_NAME MATCHES "CYGWIN" OR CMAKE_SYSTEM_NAME MATCHES "MSYS")
+	add_definitions(-D_DEFAULT_SOURCE)
+endif ()
+
 #################################################
 # MISC
 #################################################

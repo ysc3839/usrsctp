@@ -90,6 +90,10 @@ elif system == 'windows'
             '-D_WIN32_WINNT=0x601',  # Enables inet_ntop and friends
         ]), language: 'c')
     endif
+elif system == 'cygwin'
+    add_project_arguments([
+        '-D_DEFAULT_SOURCE',
+    ], language: 'c')
 else
     error('Unknown system: @0@'.format(system))
 endif

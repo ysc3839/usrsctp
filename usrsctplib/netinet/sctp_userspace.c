@@ -117,7 +117,11 @@ sctp_userspace_get_mtu_from_ifn(uint32_t if_index)
 #else
 			if ((fd = socket(AF_INET6, SOCK_DGRAM, 0)) >= 0) {
 #endif
+#if defined(__CYGWIN__)
+				if (ioctl(fd, (int)SIOCGIFMTU, &ifr) >= 0) {
+#else
 				if (ioctl(fd, SIOCGIFMTU, &ifr) >= 0) {
+#endif
 					mtu = ifr.ifr_mtu;
 				}
 				close(fd);

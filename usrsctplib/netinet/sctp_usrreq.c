@@ -7877,7 +7877,7 @@ sctp_connect(struct socket *so, struct mbuf *nam, struct proc *p)
 #if defined(__Userspace__)
 	/* TODO __Userspace__ falls into this code for IPv6 stuff at the moment... */
 #endif
-#if !defined(_WIN32) && !defined(__linux__) && !defined(__EMSCRIPTEN__)
+#if !defined(_WIN32) && !defined(__linux__) && !defined(__EMSCRIPTEN__) && !defined(__CYGWIN__)
 	switch (addr->sa_family) {
 #ifdef INET6
 	case AF_INET6:

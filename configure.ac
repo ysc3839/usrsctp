@@ -69,6 +69,9 @@ openbsd*)
 solaris*)
   CFLAGS="$CFLAGS -D_XPG4_2"
   ;;
+cygwin* | msys*)
+  CFLAGS="$CFLAGS -std=c99 -pthread -D_DEFAULT_SOURCE"
+  ;;
 esac
 
 if test "x$GCC" = "xyes" -o "x$CC" = "xclang" ; then

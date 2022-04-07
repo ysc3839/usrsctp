@@ -516,7 +516,7 @@ struct sx {int dummy;};
 #if !defined(_WIN32)
 #include <netinet/ip6.h>
 #endif
-#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__linux__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(_WIN32) || defined(__EMSCRIPTEN__)
+#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__linux__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(_WIN32) || defined(__EMSCRIPTEN__) || defined(__CYGWIN__)
 #include "user_ip6_var.h"
 #else
 #include <netinet6/ip6_var.h>

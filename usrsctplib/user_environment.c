@@ -172,7 +172,7 @@ finish_random(void)
 {
 	return;
 }
-#elif (defined(__ANDROID__) && (__ANDROID_API__ < 28)) || defined(__QNX__) || defined(__EMSCRIPTEN__)
+#elif (defined(__ANDROID__) && (__ANDROID_API__ < 28)) || defined(__QNX__) || defined(__EMSCRIPTEN__) || defined(__CYGWIN__)
 #include <fcntl.h>
 
 #ifdef __QNX__

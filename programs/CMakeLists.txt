@@ -69,6 +69,9 @@ if (MSYS OR MINGW)
 	endif ()
 endif ()
 
+if (CMAKE_SYSTEM_NAME MATCHES "CYGWIN" OR CMAKE_SYSTEM_NAME MATCHES "MSYS")
+	add_definitions(-D_DEFAULT_SOURCE)
+endif ()
 
 #################################################
 # MISC
